@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>gisok的技术博客</title>
+  <title>配置GitHub博客 | gisok的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="gisok的技术博客描述">
-<meta property="og:type" content="website">
-<meta property="og:title" content="gisok的技术博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="独守空房可接受大黄蜂 独守空房可接受大黄蜂">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置GitHub博客">
+<meta property="og:url" content="http://yoursite.com/2017/10/16/配置GitHub博客/index.html">
 <meta property="og:site_name" content="gisok的技术博客">
-<meta property="og:description" content="gisok的技术博客描述">
+<meta property="og:description" content="独守空房可接受大黄蜂 独守空房可接受大黄蜂">
+<meta property="og:image" content="https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1489798068,2119151214&fm=85&s=45889B554E25190D581E496B0300601B">
+<meta property="og:image" content="https://segmentfault.com/img/bVCco5">
+<meta property="og:updated_time" content="2017-10-16T07:53:53.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gisok的技术博客">
-<meta name="twitter:description" content="gisok的技术博客描述">
+<meta name="twitter:title" content="配置GitHub博客">
+<meta name="twitter:description" content="独守空房可接受大黄蜂 独守空房可接受大黄蜂">
+<meta name="twitter:image" content="https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1489798068,2119151214&fm=85&s=45889B554E25190D581E496B0300601B">
   
     <link rel="alternate" href="/atom.xml" title="gisok的技术博客" type="application/atom+xml">
   
@@ -70,9 +74,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-配置GitHub博客" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-配置GitHub博客" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/10/16/配置GitHub博客/" class="article-date">
   <time datetime="2017-10-16T07:51:53.000Z" itemprop="datePublished">2017-10-16</time>
@@ -85,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/配置GitHub博客/">配置GitHub博客</a>
+    <h1 class="article-title" itemprop="name">
+      配置GitHub博客
     </h1>
   
 
@@ -109,96 +111,74 @@
     </footer>
   </div>
   
-</article>
- 
-
-
-  
-    <article id="post-Git学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/16/Git学习笔记/" class="article-date">
-  <time datetime="2017-10-16T04:00:15.000Z" itemprop="datePublished">2017-10-16</time>
-</a>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/Git学习笔记/">Git学习笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Git-学习笔记"><a href="#Git-学习笔记" class="headerlink" title="Git 学习笔记"></a>Git 学习笔记</h1><p><a href="https://github.com/gisok/git-study.git" target="_blank" rel="external">GitHub</a><br>
-        
-          <p class="article-more-link">
-            <a href="/2017/10/16/Git学习笔记/#more">继续阅读全文 »</a>
-          </p>
-        
-      
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/Git学习笔记/" data-id="cj8tvwavy0000zwlgfn9p2s8n" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
   </div>
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/16/Git学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Git学习笔记</div>
+    </a>
+  
+</nav>
+
   
 </article>
  
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/10/16/hello-world/" class="article-date">
-  <time datetime="2017-10-16T03:49:26.558Z" itemprop="datePublished">2017-10-16</time>
-</a>
+     
+  <div class="comments" id="comments">
     
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
   </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br>
-        
-          <p class="article-more-link">
-            <a href="/2017/10/16/hello-world/#more">继续阅读全文 »</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/10/16/hello-world/" data-id="cj8tvwawb0001zwlgixobb3ii" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
  
-
-
   
 
 </section>
@@ -206,95 +186,34 @@
     <aside id="sidebar">
   
     
-  <div class="widget-wrap">
-     
-        <h3 class="follow-title ">Follow me</h3>
-     
-    <div class="widget follow">
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
       
-              <a class="github" aria-hidden="true" href="https://github.com/giscafer" target="_blank" title="Github"></a>
-      
-      
-            <a class="weibo" aria-hidden="true"  href="http://weibo.com/laohoubin" target="_blank" title="微博"></a>
-      
-      
-              <a class="zhihu" aria-hidden="true"  href="http://www.zhihu.com/people/giscafer" target="_blank" title="知乎"></a>
-      
-      
-            <a class="email" aria-hidden="true"  href="mailto:youemail@outlook.com" target="_blank" title="邮箱"></a>
-      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#独守空房可接受大黄蜂"><span class="toc-number">1.</span> <span class="toc-text">独守空房可接受大黄蜂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#独守空房可接受大黄蜂-1"><span class="toc-number">2.</span> <span class="toc-text">独守空房可接受大黄蜂</span></a></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
 
+  
+    
 
   
     
   
     
+  
+    
 
   
     
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title recent-posts">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/10/16/配置GitHub博客/">配置GitHub博客</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/16/Git学习笔记/">Git学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2017/10/16/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title archive">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">3</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-<div class="widget-wrap">
-    <h3 class="widget-title">Links</h3>
-    <div class="widget">
-        <ul>
-            
-            <li>
-                <a href="http://blog.giscafer.com">giscafer&#39;s blog</a>
-            </li>
-            
-            <li>
-                <a href="http://www.gis520.com">GIS520社区</a>
-            </li>
-            
-        </ul>
-    </div>
-</div>
-
   
     <!--微信公众号二维码-->
-
-  <div class="widget-wrap">
-    <h3 class="follow-title ">WeChat</h3>
-    <div class="widget wechat-widget">
-        <img src="http://blog.giscafer.com/static/images/qrcode_giscafer.jpg" alt="扫码关注" width="250"/>
-    </div>
-  </div>
 
 
   
